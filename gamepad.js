@@ -41,7 +41,7 @@ class GPOS {
     try {
         return navigator.getGamepads()[p].buttons[b].pressed 
     } catch (error) {
-        return 'error'
+        return error.message
     }
   }
 
