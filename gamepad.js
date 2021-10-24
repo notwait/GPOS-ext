@@ -42,7 +42,7 @@ class GPOS {
         var obj = JSON.parse(jsons)
         var p = path.split(/[]/, '\n')
         var navigate = obj
-        array.forEach(key => {
+        p.forEach(key => {
             if(isNaN(Number(key))){
                 navigate = navigate[key] // foo["bar"] === foo.bar
             } else {
