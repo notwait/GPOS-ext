@@ -48,6 +48,7 @@ class GPOS {
             } else {
                 navigate = navigate[Number(key)]
             }
+            return navigate
         }); 
     } catch (error) {
         return error.message
