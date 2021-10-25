@@ -17,44 +17,65 @@ class GPOS {
 
       blocks: [
         {
-          opcode: 'getKeyJSON',
+          opcode: 'varList_addToList',
 
           blockType: Scratch.BlockType.REPORTER,
 
-          text: 'get from JSON [jsons] [path]',
+          text: 'add [val] to variable list [list]',
           arguments: {
-            jsons: {
+            val: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: '{"zeroToFour":[0,1,2,3]}'
+              defaultValue: ''
             },
-            path: {
+            list: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: '[zeroToFour][0]'
+              defaultValue: ''
             }
           }
         },
+        {
+            opcode: 'varList_removeFromList',
+  
+            blockType: Scratch.BlockType.REPORTER,
+  
+            text: 'delete [eraseNum] from variable list [list]',
+            arguments: {
+              eraseNum: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: ''
+              },
+              list: {
+                type: Scratch.ArgumentType.STRING,
+                defaultValue: ''
+              }
+            }
+          },
+          {
+            opcode: 'varList_blankList',
+  
+            blockType: Scratch.BlockType.REPORTER,
+  
+            text: 'blank list',
+            arguments: {}
+          },
       ]
     }
   }
 
-  getKeyJSON({jsons, path}) {
-    try {
-        var obj = JSON.parse(jsons)
-        var p = path.split(/[]/, '\n')
-        var navigate = obj
-        p.forEach(key => {
-            if(isNaN(Number(key))){
-                navigate = navigate[key] // foo["bar"] === foo.bar
-            } else {
-                navigate = navigate[Number(key)]
-            }
-            return navigate
-        }); 
-    } catch (error) {
-        return error.message
-    }
+  varList_addToList({val, list}) {
+    return JSON.stringify(JSON.parse(list).concat(val)) // Passing certain values may cause undefined behavior
   }
-
+  varList_removeFromList({eraseNum, list}) {
+    return JSON.stringify(JSON.parse(list).filter((_value, index)=>{return index === eraseNum}))
+  }
+  varList_blankList() {
+    return '[]'
+  }
+  varList_insertAtList({list, place, toReplaceWith}) {
+    var i = JSON.parse(list)
+    i.splice(place, 0, toReplaceWith)
+    return JSON.stringify(i)
+  }
 }
 
 Scratch.extensions.register(new GPOS());
