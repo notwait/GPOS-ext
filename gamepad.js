@@ -41,7 +41,7 @@ class GPOS {
             text: 'delete [eraseNum] from variable list [list]',
             arguments: {
               eraseNum: {
-                type: Scratch.ArgumentType.STRING,
+                type: Scratch.ArgumentType.NUMBER,
                 defaultValue: ''
               },
               list: {
