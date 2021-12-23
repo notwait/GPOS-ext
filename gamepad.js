@@ -17,65 +17,27 @@ class GPOS {
 
       blocks: [
         {
-          opcode: 'varList_addToList',
+          opcode: 'matrix',
 
           blockType: Scratch.BlockType.REPORTER,
 
-          text: 'add [val] to variable list [list]',
+          text: '[matrix]',
           arguments: {
             val: {
-              type: Scratch.ArgumentType.STRING,
+              type: Scratch.ArgumentType.MATRIX,
               defaultValue: ''
-            },
-            list: {
-              type: Scratch.ArgumentType.STRING,
-              defaultValue: ''
+            }
             }
           }
-        },
-        {
-            opcode: 'varList_removeFromList',
-  
-            blockType: Scratch.BlockType.REPORTER,
-  
-            text: 'delete [eraseNum] from variable list [list]',
-            arguments: {
-              eraseNum: {
-                type: Scratch.ArgumentType.NUMBER,
-                defaultValue: ''
-              },
-              list: {
-                type: Scratch.ArgumentType.STRING,
-                defaultValue: ''
-              }
-            }
-          },
-          {
-            opcode: 'varList_blankList',
-  
-            blockType: Scratch.BlockType.REPORTER,
-  
-            text: 'blank list',
-            arguments: {}
-          },
+        }
       ]
     }
   }
 
-  varList_addToList({val, list}) {
-    return JSON.stringify(JSON.parse(list).concat(val)) // Passing certain values may cause undefined behavior
+  matrix({matrix}) {
+    return matrix
   }
-  varList_removeFromList({eraseNum, list}) {
-    return JSON.stringify(JSON.parse(list).filter((_value, index)=>{return index === eraseNum}))
-  }
-  varList_blankList() {
-    return '[]'
-  }
-  varList_insertAtList({list, place, toReplaceWith}) {
-    var i = JSON.parse(list)
-    i.splice(place, 0, toReplaceWith)
-    return JSON.stringify(i)
-  }
+  
 }
 
 Scratch.extensions.register(new GPOS());
