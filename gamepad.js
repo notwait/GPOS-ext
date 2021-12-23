@@ -57,6 +57,19 @@ class GPOS {
               type: Scratch.ArgumentType.COLOR
             }
           }
+        },
+        {
+          opcode: 'string_to_bool',
+
+          blockType: Scratch.BlockType.BOOLEAN,
+
+          text: 'is [string] truthy?',
+          arguments: {
+            string: {
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'abc'
+            }
+          }
         }
       ]
     }
@@ -64,6 +77,9 @@ class GPOS {
 
   matrix({matrix}) {
     return matrix
+  }
+  string_to_bool({string}) {
+    return (!!string) && (!string == 'false')
   }
   color({color}){
     return Number('0x' + color.slice(1))
