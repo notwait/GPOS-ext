@@ -70,6 +70,7 @@ class GPOS {
   }
   if_else_reporter({t, bool, f}){
     return bool ? t : f
+  }
 }
 
 Scratch.extensions.register(new GPOS());
