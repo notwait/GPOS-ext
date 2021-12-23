@@ -36,7 +36,7 @@ class GPOS {
           text: '[color]',
           arguments: {
             color: {
-              type: Scratch.ArgumentType.color
+              type: Scratch.ArgumentType.COLOR
             }
           }
         }
@@ -46,6 +46,9 @@ class GPOS {
 
   matrix({matrix}) {
     return matrix
+  }
+  color({color}){
+    return color
   }
   
 }
