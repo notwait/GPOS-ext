@@ -27,7 +27,6 @@ class GPOS {
               type: Scratch.ArgumentType.MATRIX,
               defaultValue: ''
             }
-            }
           }
         }
       ]
