@@ -23,9 +23,9 @@ class GPOS {
 
           text: '[matrix]',
           arguments: {
-            val: {
-              type: Scratch.ArgumentType.NUMBER,
-              defaultValue: 0
+            matrix: {
+              type: Scratch.ArgumentType.MATRIX,
+              defaultValue: ''
             }
             }
           }
