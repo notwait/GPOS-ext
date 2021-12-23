@@ -21,10 +21,28 @@ class GPOS {
 
           blockType: Scratch.BlockType.REPORTER,
 
-          text: '[matrix]',
+          text: 'mono bitmap [matrix]',
           arguments: {
             matrix: {
               type: Scratch.ArgumentType.MATRIX
+            }
+          }
+        },
+        {
+          opcode: 'if_else_reporter',
+
+          blockType: Scratch.BlockType.REPORTER,
+
+          text: '[t] if [bool] else [f]',
+          arguments: {
+            t: {
+              type: Scratch.ArgumentType.STRING
+            },
+            f: {
+              type: Scratch.ArgumentType.STRING
+            },
+            bool: {
+              type: Scratch.ArgumentType.BOOLEAN
             }
           }
         },
@@ -33,7 +51,7 @@ class GPOS {
 
           blockType: Scratch.BlockType.REPORTER,
 
-          text: '[color]',
+          text: 'color [color]',
           arguments: {
             color: {
               type: Scratch.ArgumentType.COLOR
@@ -50,7 +68,8 @@ class GPOS {
   color({color}){
     return Number('0x' + color.slice(1))
   }
-  
+  if_else_reporter({t, bool, f}){
+    return bool ? t : f
 }
 
 Scratch.extensions.register(new GPOS());
