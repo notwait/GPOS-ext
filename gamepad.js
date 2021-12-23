@@ -24,8 +24,19 @@ class GPOS {
           text: '[matrix]',
           arguments: {
             matrix: {
-              type: Scratch.ArgumentType.MATRIX,
-              defaultValue: ''
+              type: Scratch.ArgumentType.MATRIX
+            }
+          }
+        },
+        {
+          opcode: 'color',
+
+          blockType: Scratch.BlockType.REPORTER,
+
+          text: '[color]',
+          arguments: {
+            color: {
+              type: Scratch.ArgumentType.color
             }
           }
         }
