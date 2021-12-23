@@ -48,7 +48,7 @@ class GPOS {
     return matrix
   }
   color({color}){
-    return color
+    return Number('0x' + color.slice(1))
   }
   
 }
