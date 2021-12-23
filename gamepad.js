@@ -79,7 +79,7 @@ class GPOS {
     return matrix
   }
   string_to_bool({string}) {
-    return (!!string) && (!string == 'false')
+    return (!!string) || (string == 'true')
   }
   color({color}){
     return Number('0x' + color.slice(1))
