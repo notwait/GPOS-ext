@@ -8,9 +8,9 @@ class notwaitBlocks {
       name: 'notwait Blocks',
       menuIconURI: 'https://notwait.github.io/notwait-blocks/logo.svg',
 
-      color1: '#1a61ad',
-      color2: '#104278',
-      color3: '#041833',
+      color1: '#00439c',
+      color2: '#003273',
+      color3: '#002c66',
 
       blocks: [
         {
