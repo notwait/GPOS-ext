@@ -8,6 +8,7 @@ class notwaitBlocks {
     return {
       id: 'gpos',
       name: 'GPOS',
+      menuIconURI: 'https://notwait.github.io/notwait-blocks/logo.svg',
 
       color1: '#8BC34A',
       color2: '#7CB342',
