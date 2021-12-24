@@ -74,6 +74,22 @@ class notwaitBlocks {
           }
         },
         {
+          opcode: 'in_base',
+
+          blockType: Scratch.BlockType.REPORTER,
+
+          text: '[num] in base [base]',
+          arguments: {
+            num: {
+              type: Scratch.ArgumentType.NUMBER
+            },
+            base: {
+              type: Scratch.ArgumentType.NUMBER
+            
+            }
+          }
+        },
+        {
           opcode: 'string_to_bool',
 
           blockType: Scratch.BlockType.BOOLEAN,
@@ -104,6 +120,9 @@ class notwaitBlocks {
   }
   pow({a, b}){
     return a ** b
+  }
+  in_base({num, base}){
+    num.toString && typeof(num) == 'number' ? num.toString(base) : ''
   }
 }
 
