@@ -6,13 +6,13 @@ class notwaitBlocks {
 
   getInfo() {
     return {
-      id: 'gpos',
-      name: 'GPOS',
+      id: 'notwait',
+      name: 'notwait Blocks',
       menuIconURI: 'https://notwait.github.io/notwait-blocks/logo.svg',
 
-      color1: '#8BC34A',
-      color2: '#7CB342',
-      color3: '#689F38',
+      color1: '#1a61ad',
+      color2: '#104278',
+      color3: '#041833',
 
       blocks: [
         {
