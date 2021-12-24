@@ -122,7 +122,7 @@ class notwaitBlocks {
     return a ** b
   }
   in_base({num, base}){
-    num.toString && typeof(num) == 'number' ? num.toString(base) : ''
+    return num.toString && typeof(num) == 'number' ? num.toString(base) : ''
   }
 }
 
