@@ -36,10 +36,12 @@ class GPOS {
           text: '[t] if [bool] else [f]',
           arguments: {
             t: {
-              type: Scratch.ArgumentType.STRING
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'yes'
             },
             f: {
-              type: Scratch.ArgumentType.STRING
+              type: Scratch.ArgumentType.STRING,
+              defaultValue: 'no'
             },
             bool: {
               type: Scratch.ArgumentType.BOOLEAN
@@ -79,7 +81,7 @@ class GPOS {
     return matrix
   }
   string_to_bool({string}) {
-    return (!!string) ? true : (string === 'false') ? false : true
+    return string == 'false' ? false : string == '0' ? false : true
   }
   color({color}){
     return Number('0x' + color.slice(1))
