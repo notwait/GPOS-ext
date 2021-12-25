@@ -58,6 +58,14 @@ class notwaitBlocks {
           }
         },
         {
+          opcode: 'newline',
+
+          blockType: Scratch.BlockType.REPORTER,
+
+          text: 'new line',
+          arguments: {}
+        },
+        {
           opcode: 'pow',
 
           blockType: Scratch.BlockType.REPORTER,
@@ -123,6 +131,9 @@ class notwaitBlocks {
   }
   in_base({num, base}){
     return num.toString && typeof(num) == 'number' ? num.toString(base) : ''
+  }
+  newline(){
+    return '\n'
   }
 }
 
