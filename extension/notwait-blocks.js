@@ -60,7 +60,7 @@ class notwaitBlocks {
         {
           opcode: 'newline',
 
-          blockType: Scratch.BlockType.REPORTER,
+          blockType: Scratch.BlockType.BOOLEAN,
 
           text: 'new line',
           arguments: {}
