@@ -102,15 +102,20 @@ class notwaitBlocks {
 
           blockType: Scratch.BlockType.BOOLEAN,
 
-          text: 'is [string] truthy?',
+          text: '[string]',
           arguments: {
             string: {
               type: Scratch.ArgumentType.STRING,
-              defaultValue: 'abc'
+              menu: 'bool'
             }
           }
         }
-      ]
+      ],
+      menus: {
+        bool: {
+          items: [true, false],
+          acceptReporters = true
+        }
     }
   }
 
