@@ -114,7 +114,7 @@ class notwaitBlocks {
       menus: {
         bool: {
           items: [true, false],
-          acceptReporters = true
+          acceptReporters: true
         }
     }
   }
