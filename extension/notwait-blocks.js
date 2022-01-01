@@ -118,7 +118,7 @@ class notwaitBlocks {
         }
     }
   }
-
+  }
   matrix({matrix}) {
     return matrix
   }
